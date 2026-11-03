@@ -17,7 +17,8 @@ $stmt->execute([$id]);
 $thread = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($thread === false) {
     http_response_code(404);
-    echo json_encode(['status' => false, 'fout' => "Thread $id bestaat niet"]);
+    echo json_encode(['status' => false, 'fout' =>
+        "Thread $id bestaat niet."]);
     exit();
 }
 echo json_encode(['thread' => $thread]);
